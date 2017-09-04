@@ -33,6 +33,7 @@
         <spock.core.version>1.0-groovy-2.3</spock.core.version>
         <spring.test.version>4.1.9.RELEASE</spring.test.version>
         <spring.instrument.version>4.1.9.RELEASE</spring.instrument.version>
+        <mockito.version>1.10.19</mockito.version>
     </properties>
     <build>
         <pluginManagement>
@@ -352,7 +353,7 @@
 			<plugin>
                 <groupId>org.codehaus.gmavenplus</groupId>
                 <artifactId>gmavenplus-plugin</artifactId>
-            </plugin> 
+            </plugin>
         </plugins>
     </build>
     <distributionManagement>
@@ -364,7 +365,7 @@
             <id>releases</id>
             <url>http://nexus.broadleafcommerce.org/nexus/content/repositories/releases/</url>
         </repository>
-    </distributionManagement> 
+    </distributionManagement>
     <profiles>
         <profile>
             <id>only-eclipse</id>
@@ -671,6 +672,11 @@
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
                 <version>4.12</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-all</artifactId>
+                <version>${mockito.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
