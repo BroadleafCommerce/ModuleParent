@@ -32,10 +32,10 @@
         <groovy.version>2.4.15</groovy.version>
         <spock.spring.version>1.1-groovy-2.4</spock.spring.version>
         <spock.core.version>1.1-groovy-2.4</spock.core.version>
-        <spring.test.version>5.2.7.RELEASE</spring.test.version>
-        <spring.instrument.version>5.2.7.RELEASE</spring.instrument.version>
+        <spring.test.version>5.3.0</spring.test.version>
+        <spring.instrument.version>5.3.0</spring.instrument.version>
         <jackson.version>2.9.8</jackson.version>
-        <lombok.version>1.18.4</lombok.version>
+        <lombok.version>1.18.16</lombok.version>
         <hsqldb.version>2.4.1</hsqldb.version>
         <gpg.plugin.version>1.6</gpg.plugin.version>
     </properties>
@@ -45,7 +45,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.1</version>
+                    <version>3.8.1</version>
                     <configuration>
                         <source>1.8</source>
                         <target>1.8</target>
@@ -59,22 +59,22 @@
                 <plugin>
                     <groupId>org.zeroturnaround</groupId>
                     <artifactId>jrebel-maven-plugin</artifactId>
-                    <version>1.1.5</version>
+                    <version>1.1.10</version>
                 </plugin>
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>build-helper-maven-plugin</artifactId>
-                    <version>3.0.0</version>
+                    <version>3.2.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-war-plugin</artifactId>
-                    <version>3.0.0</version>
+                    <version>3.3.1</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jar-plugin</artifactId>
-                    <version>3.0.0</version>
+                    <version>3.2.0</version>
                 </plugin>
                 <plugin>
                     <artifactId>maven-clean-plugin</artifactId>
@@ -680,7 +680,7 @@
             <dependency>
                 <groupId>javax.servlet</groupId>
                 <artifactId>javax.servlet-api</artifactId>
-                <version>3.1.0</version>
+                <version>4.0.1</version>
                 <scope>provided</scope>
             </dependency>
             <dependency>
@@ -735,7 +735,7 @@
             <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
-                <version>4.12</version>
+                <version>4.13.1</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
