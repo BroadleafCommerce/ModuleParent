@@ -7,26 +7,8 @@
     <artifactId>broadleaf-module-parent</artifactId>
     <version>3.0.7-SNAPSHOT</version>
     <packaging>pom</packaging>
+    <url>https://www.broadleafcommerce.com</url>
 
-    <scm>
-        <connection>scm:git:git@github.com:BroadleafCommerce/ModuleParent.git</connection>
-        <developerConnection>scm:git:git@github.com:BroadleafCommerce/ModuleParent.git</developerConnection>
-        <url>https://github.com/BroadleafCommerce/ModuleParent</url>
-        <tag>HEAD</tag>
-    </scm>
-    <url>http://www.broadleafcommerce.com</url>
-    <repositories>
-        <repository>
-            <id>releases</id>
-            <name>public releases</name>
-            <url>https://nexus2.broadleafcommerce.org/nexus/content/groups/community-releases/</url>
-        </repository>
-        <repository>
-            <id>snapshots</id>
-            <name>public snapshots</name>
-            <url>https://nexus2.broadleafcommerce.org/nexus/content/groups/community-snapshots/</url>
-        </repository>
-    </repositories>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <attachSources>true</attachSources>
@@ -40,6 +22,24 @@
         <hsqldb.version>2.4.1</hsqldb.version>
         <gpg.plugin.version>1.6</gpg.plugin.version>
     </properties>
+    <scm>
+        <connection>scm:git:git@github.com:BroadleafCommerce/ModuleParent.git</connection>
+        <developerConnection>scm:git:git@github.com:BroadleafCommerce/ModuleParent.git</developerConnection>
+        <url>https://github.com/BroadleafCommerce/ModuleParent</url>
+        <tag>HEAD</tag>
+    </scm>
+    <repositories>
+        <repository>
+            <id>releases</id>
+            <name>public releases</name>
+            <url>https://nexus2.broadleafcommerce.org/nexus/content/groups/community-releases/</url>
+        </repository>
+        <repository>
+            <id>snapshots</id>
+            <name>public snapshots</name>
+            <url>https://nexus2.broadleafcommerce.org/nexus/content/groups/community-snapshots/</url>
+        </repository>
+    </repositories>
     <build>
         <pluginManagement>
             <plugins>
