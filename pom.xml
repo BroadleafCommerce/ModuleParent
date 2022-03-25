@@ -5,14 +5,14 @@
     <description>Contains plugin definitions and versions so that they do not pollute all projects</description>
     <groupId>org.broadleafcommerce</groupId>
     <artifactId>broadleaf-module-parent</artifactId>
-    <version>2.0.21-SNAPSHOT</version>
+    <version>2.0.21-GA</version>
     <packaging>pom</packaging>
 
     <scm>
         <connection>scm:git:git@github.com:BroadleafCommerce/ModuleParent.git</connection>
         <developerConnection>scm:git:git@github.com:BroadleafCommerce/ModuleParent.git</developerConnection>
         <url>https://github.com/BroadleafCommerce/ModuleParent</url>
-        <tag>HEAD</tag>
+        <tag>broadleaf-module-parent-2.0.21-GA</tag>
     </scm>
     <url>http://www.broadleafcommerce.com</url>
     <repositories>
