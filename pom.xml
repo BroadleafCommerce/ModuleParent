@@ -5,7 +5,7 @@
     <description>Contains plugin definitions and versions so that they do not pollute all projects</description>
     <groupId>org.broadleafcommerce</groupId>
     <artifactId>broadleaf-module-parent</artifactId>
-    <version>3.3.3-SNAPSHOT</version>
+    <version>3.4.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <url>https://www.broadleafcommerce.com</url>
 
