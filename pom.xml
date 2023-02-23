@@ -18,7 +18,7 @@
         <spring.test.version>5.3.23</spring.test.version>
         <spring.instrument.version>5.3.23</spring.instrument.version>
         <spring.boot.test.version>2.7.8</spring.boot.test.version>
-        <jackson.version>2.13.4</jackson.version>
+        <jackson-bom.version>2.14.2</jackson-bom.version>
         <lombok.version>1.18.24</lombok.version>
         <hsqldb.version>2.7.1</hsqldb.version>
         <gpg.plugin.version>1.6</gpg.plugin.version>
