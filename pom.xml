@@ -15,10 +15,10 @@
         <groovy.version>2.4.15</groovy.version>
         <spock.spring.version>1.1-groovy-2.4</spock.spring.version>
         <spock.core.version>1.1-groovy-2.4</spock.core.version>
-        <spring.test.version>5.3.23</spring.test.version>
-        <spring.instrument.version>5.3.23</spring.instrument.version>
-        <spring.boot.test.version>2.7.5</spring.boot.test.version>
-        <jackson.version>2.13.4</jackson.version>
+        <spring.test.version>6.0.6</spring.test.version>
+        <spring.instrument.version>6.0.6</spring.instrument.version>
+        <spring.boot.test.version>3.0.4</spring.boot.test.version>
+        <jackson.version>2.14.2</jackson.version>
         <lombok.version>1.18.24</lombok.version>
         <hsqldb.version>2.7.1</hsqldb.version>
         <gpg.plugin.version>1.6</gpg.plugin.version>
@@ -345,27 +345,6 @@
         <plugins>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
-                <artifactId>animal-sniffer-maven-plugin</artifactId>
-                <version>1.18</version>
-                <executions>
-                    <execution>
-                        <id>sniff</id>
-                        <phase>test</phase>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <signature>
-                        <groupId>org.codehaus.mojo.signature</groupId>
-                        <artifactId>java18</artifactId>
-                        <version>1.0</version>
-                    </signature>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
                 <artifactId>license-maven-plugin</artifactId>
             </plugin>
             <plugin>
@@ -683,9 +662,9 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>javax.servlet</groupId>
-                <artifactId>javax.servlet-api</artifactId>
-                <version>4.0.1</version>
+                <groupId>jakarta.servlet</groupId>
+                <artifactId>jakarta.servlet-api</artifactId>
+                <version>5.0.0</version>
                 <scope>provided</scope>
             </dependency>
             <dependency>
