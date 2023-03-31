@@ -16,12 +16,13 @@
         <spock.spring.version>1.1-groovy-2.4</spock.spring.version>
         <spock.core.version>1.1-groovy-2.4</spock.core.version>
         <spring.test.version>6.0.6</spring.test.version>
-        <spring.instrument.version>6.0.6</spring.instrument.version>
+        <spring.version>6.0.6</spring.version>
         <spring.boot.test.version>3.0.4</spring.boot.test.version>
         <jackson.version>2.14.2</jackson.version>
         <lombok.version>1.18.24</lombok.version>
         <hsqldb.version>2.7.1</hsqldb.version>
         <gpg.plugin.version>1.6</gpg.plugin.version>
+        <jakarta.version>6.0.0</jakarta.version>
     </properties>
     <scm>
         <connection>scm:git:git@github.com:BroadleafCommerce/ModuleParent.git</connection>
@@ -363,7 +364,7 @@
                                 <artifactItem>
                                     <groupId>org.springframework</groupId>
                                     <artifactId>spring-instrument</artifactId>
-                                    <version>${spring.instrument.version}</version>
+                                    <version>${spring.version}</version>
                                     <outputDirectory>${project.build.directory}/agents</outputDirectory>
                                     <destFileName>spring-instrument.jar</destFileName>
                                 </artifactItem>
@@ -664,7 +665,7 @@
             <dependency>
                 <groupId>jakarta.servlet</groupId>
                 <artifactId>jakarta.servlet-api</artifactId>
-                <version>5.0.0</version>
+                <version>${jakarta.version}</version>
                 <scope>provided</scope>
             </dependency>
             <dependency>
