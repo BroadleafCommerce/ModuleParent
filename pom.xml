@@ -12,9 +12,9 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <attachSources>true</attachSources>
-        <groovy.version>2.4.15</groovy.version>
-        <spock.spring.version>1.1-groovy-2.4</spock.spring.version>
-        <spock.core.version>1.1-groovy-2.4</spock.core.version>
+        <groovy.version>4.0.11</groovy.version>
+        <spock.spring.version>2.4-M1-groovy-4.0</spock.spring.version>
+        <spock.core.version>2.4-M1-groovy-4.0</spock.core.version>
         <spring.test.version>6.0.8</spring.test.version>
         <spring.version>6.0.8</spring.version>
         <spring.boot.test.version>3.0.6</spring.boot.test.version>
@@ -675,7 +675,7 @@
                 <scope>provided</scope>
             </dependency>
             <dependency>
-                <groupId>org.codehaus.groovy</groupId>
+                <groupId>org.apache.groovy</groupId>
                 <artifactId>groovy-all</artifactId>
                 <version>${groovy.version}</version>
                 <scope>test</scope>
@@ -693,7 +693,7 @@
                 <scope>test</scope>
                 <exclusions>
                     <exclusion>
-                        <groupId>org.codehaus.groovy</groupId>
+                        <groupId>org.apache.groovy</groupId>
                         <artifactId>groovy-all</artifactId>
                     </exclusion>
                 </exclusions>
@@ -705,7 +705,7 @@
                 <scope>test</scope>
                 <exclusions>
                     <exclusion>
-                        <groupId>org.codehaus.groovy</groupId>
+                        <groupId>org.apache.groovy</groupId>
                         <artifactId>groovy-all</artifactId>
                     </exclusion>
                 </exclusions>
