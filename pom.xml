@@ -15,8 +15,8 @@
         <groovy.version>2.4.15</groovy.version>
         <spock.spring.version>1.1-groovy-2.4</spock.spring.version>
         <spock.core.version>1.1-groovy-2.4</spock.core.version>
-        <spring.test.version>5.3.23</spring.test.version>
-        <spring.instrument.version>5.3.23</spring.instrument.version>
+        <spring.test.version>5.3.27</spring.test.version>
+        <spring.instrument.version>5.3.27</spring.instrument.version>
         <spring.boot.test.version>2.7.8</spring.boot.test.version>
         <jackson-bom.version>2.14.2</jackson-bom.version>
         <lombok.version>1.18.24</lombok.version>
