@@ -12,13 +12,13 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <attachSources>true</attachSources>
-        <groovy.version>4.0.11</groovy.version>
+        <groovy.version>4.0.12</groovy.version>
         <spock.spring.version>2.4-M1-groovy-4.0</spock.spring.version>
         <spock.core.version>2.4-M1-groovy-4.0</spock.core.version>
         <spring.test.version>6.0.8</spring.test.version>
         <spring.version>6.0.8</spring.version>
         <spring.boot.test.version>3.0.6</spring.boot.test.version>
-        <jackson.version>2.14.2</jackson.version>
+        <jackson.version>2.15.0</jackson.version>
         <lombok.version>1.18.24</lombok.version>
         <hsqldb.version>2.7.1</hsqldb.version>
         <gpg.plugin.version>1.6</gpg.plugin.version>
