@@ -185,7 +185,7 @@
                     <configuration>
                         <reuseForks>false</reuseForks>
                         <argLine>
-                            -Xmx1g
+                            -Xmx2g
                             -javaagent:"${project.build.directory}/agents/spring-instrument.jar"
                             @{surefire.argLine}
                         </argLine>
@@ -216,7 +216,7 @@
                 <plugin>
                     <groupId>org.jacoco</groupId>
                     <artifactId>jacoco-maven-plugin</artifactId>
-                    <version>0.8.8</version>
+                    <version>0.8.10</version>
                     <executions>
                         <!-- Unit test coverage prep; generates jacoco.exec -->
                         <execution>
