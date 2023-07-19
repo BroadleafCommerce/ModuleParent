@@ -12,16 +12,17 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <attachSources>true</attachSources>
-        <groovy.version>2.4.15</groovy.version>
-        <spock.spring.version>1.1-groovy-2.4</spock.spring.version>
-        <spock.core.version>1.1-groovy-2.4</spock.core.version>
-        <spring.test.version>5.3.23</spring.test.version>
-        <spring.instrument.version>5.3.23</spring.instrument.version>
-        <spring.boot.test.version>2.7.5</spring.boot.test.version>
-        <jackson.version>2.13.4</jackson.version>
+        <groovy.version>4.0.12</groovy.version>
+        <spock.spring.version>2.4-M1-groovy-4.0</spock.spring.version>
+        <spock.core.version>2.4-M1-groovy-4.0</spock.core.version>
+        <spring.test.version>6.0.9</spring.test.version>
+        <spring.version>6.0.9</spring.version>
+        <spring.boot.test.version>3.0.7</spring.boot.test.version>
+        <jackson.version>2.15.0</jackson.version>
         <lombok.version>1.18.24</lombok.version>
         <hsqldb.version>2.7.1</hsqldb.version>
         <gpg.plugin.version>1.6</gpg.plugin.version>
+        <jakarta.version>6.0.0</jakarta.version>
     </properties>
     <scm>
         <connection>scm:git:git@github.com:BroadleafCommerce/ModuleParent.git</connection>
@@ -48,7 +49,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.8.1</version>
+                    <version>3.11.0</version>
                     <configuration>
                         <source>1.8</source>
                         <target>1.8</target>
@@ -116,7 +117,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
-                    <version>2.22.2</version>
+                    <version>3.1.2</version>
                     <executions>
                         <execution>
                             <id>default-test</id>
@@ -184,7 +185,7 @@
                     <configuration>
                         <reuseForks>false</reuseForks>
                         <argLine>
-                            -Xmx1g
+                            -Xmx2g
                             -javaagent:"${project.build.directory}/agents/spring-instrument.jar"
                             @{surefire.argLine}
                         </argLine>
@@ -193,7 +194,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-failsafe-plugin</artifactId>
-                    <version>2.22.2</version>
+                    <version>3.1.2</version>
                     <executions>
                         <execution>
                             <goals>
@@ -215,7 +216,7 @@
                 <plugin>
                     <groupId>org.jacoco</groupId>
                     <artifactId>jacoco-maven-plugin</artifactId>
-                    <version>0.7.9</version>
+                    <version>0.8.10</version>
                     <executions>
                         <!-- Unit test coverage prep; generates jacoco.exec -->
                         <execution>
@@ -359,7 +360,7 @@
                 <configuration>
                     <signature>
                         <groupId>org.codehaus.mojo.signature</groupId>
-                        <artifactId>java18</artifactId>
+                        <artifactId>java17</artifactId>
                         <version>1.0</version>
                     </signature>
                 </configuration>
@@ -384,7 +385,7 @@
                                 <artifactItem>
                                     <groupId>org.springframework</groupId>
                                     <artifactId>spring-instrument</artifactId>
-                                    <version>${spring.instrument.version}</version>
+                                    <version>${spring.version}</version>
                                     <outputDirectory>${project.build.directory}/agents</outputDirectory>
                                     <destFileName>spring-instrument.jar</destFileName>
                                 </artifactItem>
@@ -667,7 +668,7 @@
                     <plugin>
                       <groupId>org.owasp</groupId>
                       <artifactId>dependency-check-maven</artifactId>
-                      <version>3.2.0</version>
+                      <version>8.1.2</version>
                       <executions>
                           <execution>
                               <goals>
@@ -683,9 +684,9 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>javax.servlet</groupId>
-                <artifactId>javax.servlet-api</artifactId>
-                <version>4.0.1</version>
+                <groupId>jakarta.servlet</groupId>
+                <artifactId>jakarta.servlet-api</artifactId>
+                <version>${jakarta.version}</version>
                 <scope>provided</scope>
             </dependency>
             <dependency>
@@ -695,16 +696,41 @@
                 <scope>provided</scope>
             </dependency>
             <dependency>
-                <groupId>org.codehaus.groovy</groupId>
+                <groupId>org.apache.groovy</groupId>
                 <artifactId>groovy-all</artifactId>
                 <version>${groovy.version}</version>
+                <type>pom</type>
                 <scope>test</scope>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.yaml</groupId>
+                        <artifactId>snakeyaml</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-test</artifactId>
                 <version>${spring.boot.test.version}</version>
                 <scope>test</scope>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-starter-logging</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>jakarta.xml.bind</groupId>
+                        <artifactId>jakarta.xml.bind-api</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>jakarta.activation</groupId>
+                        <artifactId>jakarta.activation-api</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.ow2.asm</groupId>
+                        <artifactId>asm</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>org.spockframework</groupId>
@@ -713,8 +739,12 @@
                 <scope>test</scope>
                 <exclusions>
                     <exclusion>
-                        <groupId>org.codehaus.groovy</groupId>
+                        <groupId>org.apache.groovy</groupId>
                         <artifactId>groovy-all</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.apache.groovy</groupId>
+                        <artifactId>groovy</artifactId>
                     </exclusion>
                 </exclusions>
             </dependency>
@@ -725,8 +755,12 @@
                 <scope>test</scope>
                 <exclusions>
                     <exclusion>
-                        <groupId>org.codehaus.groovy</groupId>
+                        <groupId>org.apache.groovy</groupId>
                         <artifactId>groovy-all</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.apache.groovy</groupId>
+                        <artifactId>groovy</artifactId>
                     </exclusion>
                 </exclusions>
             </dependency>
@@ -746,7 +780,7 @@
             <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
-                <version>4.13.1</version>
+                <version>4.13.2</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
@@ -759,7 +793,12 @@
                 <groupId>org.hsqldb</groupId>
                 <artifactId>hsqldb</artifactId>
                 <version>${hsqldb.version}</version>
-                <classifier>jdk8</classifier>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>net.bytebuddy</groupId>
+                <artifactId>byte-buddy</artifactId>
+                <version>1.14.5</version>
                 <scope>test</scope>
             </dependency>
         </dependencies>
