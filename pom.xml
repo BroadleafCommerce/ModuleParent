@@ -12,16 +12,16 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <attachSources>true</attachSources>
-        <groovy.version>4.0.12</groovy.version>
+        <groovy.version>4.0.15</groovy.version>
         <spock.spring.version>2.4-M1-groovy-4.0</spock.spring.version>
         <spock.core.version>2.4-M1-groovy-4.0</spock.core.version>
-        <spring.test.version>6.0.9</spring.test.version>
-        <spring.version>6.0.9</spring.version>
-        <spring.boot.test.version>3.0.7</spring.boot.test.version>
-        <jackson.version>2.15.0</jackson.version>
-        <lombok.version>1.18.24</lombok.version>
-        <hsqldb.version>2.7.1</hsqldb.version>
-        <gpg.plugin.version>1.6</gpg.plugin.version>
+        <spring.test.version>6.0.13</spring.test.version>
+        <spring.version>6.0.13</spring.version>
+        <spring.boot.test.version>3.0.12</spring.boot.test.version>
+        <jackson.version>2.15.3</jackson.version>
+        <lombok.version>1.18.30</lombok.version>
+        <hsqldb.version>2.7.2</hsqldb.version>
+        <gpg.plugin.version>3.1.0</gpg.plugin.version>
         <jakarta.version>6.0.0</jakarta.version>
     </properties>
     <scm>
@@ -117,7 +117,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
-                    <version>3.1.2</version>
+                    <version>3.2.1</version>
                     <executions>
                         <execution>
                             <id>default-test</id>
@@ -647,7 +647,7 @@
                     <plugin>
                       <groupId>org.owasp</groupId>
                       <artifactId>dependency-check-maven</artifactId>
-                      <version>8.1.2</version>
+                      <version>8.3.1</version>
                       <executions>
                           <execution>
                               <goals>
@@ -694,20 +694,28 @@
                 <scope>test</scope>
                 <exclusions>
                     <exclusion>
-                        <groupId>org.springframework.boot</groupId>
-                        <artifactId>spring-boot-starter-logging</artifactId>
-                    </exclusion>
-                    <exclusion>
                         <groupId>jakarta.xml.bind</groupId>
                         <artifactId>jakarta.xml.bind-api</artifactId>
                     </exclusion>
                     <exclusion>
-                        <groupId>jakarta.activation</groupId>
-                        <artifactId>jakarta.activation-api</artifactId>
-                    </exclusion>
-                    <exclusion>
                         <groupId>org.ow2.asm</groupId>
                         <artifactId>asm</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.slf4j</groupId>
+                        <artifactId>slf4j-api</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.junit.jupiter</groupId>
+                        <artifactId>junit-jupiter-api</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.junit.jupiter</groupId>
+                        <artifactId>junit-jupiter-engine</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.junit.platform</groupId>
+                        <artifactId>junit-platform-engine</artifactId>
                     </exclusion>
                 </exclusions>
             </dependency>
@@ -767,6 +775,12 @@
                 <artifactId>testng</artifactId>
                 <version>7.8.0</version>
                 <scope>test</scope>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.slf4j</groupId>
+                        <artifactId>slf4j-api</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>org.hsqldb</groupId>
@@ -777,7 +791,7 @@
             <dependency>
                 <groupId>net.bytebuddy</groupId>
                 <artifactId>byte-buddy</artifactId>
-                <version>1.14.5</version>
+                <version>1.14.9</version>
                 <scope>test</scope>
             </dependency>
         </dependencies>
