@@ -17,7 +17,7 @@
         <spock.core.version>2.4-M1-groovy-4.0</spock.core.version>
         <spring.test.version>6.0.13</spring.test.version>
         <spring.version>6.0.13</spring.version>
-        <spring.boot.test.version>3.0.12</spring.boot.test.version>
+        <spring.boot.test.version>3.1.5</spring.boot.test.version>
         <jackson.version>2.15.3</jackson.version>
         <lombok.version>1.18.30</lombok.version>
         <hsqldb.version>2.7.2</hsqldb.version>
