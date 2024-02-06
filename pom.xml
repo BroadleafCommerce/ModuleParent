@@ -270,6 +270,8 @@
                         <inceptionYear>2009</inceptionYear>
                         <licenseName>blc_confidential</licenseName>
                         <licenseResolver>${project.baseUri}/licenses</licenseResolver>
+                        <!--Updates the end-dates every year. Build normally and verify dates are changes then commit-->
+                        <canUpdateCopyright>true</canUpdateCopyright>
                         <excludes>
                             <exclude>**/*.sql</exclude>
                             <exclude>**/*.html</exclude>
