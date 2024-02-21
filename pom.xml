@@ -267,7 +267,7 @@
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>license-maven-plugin</artifactId>
-                    <version>1.20</version>
+                    <version>2.4.0</version>
                     <configuration>
                         <verbose>false</verbose>
                         <addSvnKeyWords>false</addSvnKeyWords>
@@ -278,6 +278,7 @@
                         <licenseResolver>${project.baseUri}/licenses</licenseResolver>
                         <!--Updates the end-dates every year. Build normally and verify dates are changes then commit-->
                         <canUpdateCopyright>true</canUpdateCopyright>
+                        <trimHeaderLine>true</trimHeaderLine>
                         <excludes>
                             <exclude>**/*.sql</exclude>
                             <exclude>**/*.html</exclude>
