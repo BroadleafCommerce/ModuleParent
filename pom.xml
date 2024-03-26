@@ -12,13 +12,13 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <attachSources>true</attachSources>
-        <groovy.version>4.0.15</groovy.version>
-        <spock.spring.version>2.4-M1-groovy-4.0</spock.spring.version>
-        <spock.core.version>2.4-M1-groovy-4.0</spock.core.version>
-        <spring.test.version>6.0.13</spring.test.version>
-        <spring.version>6.0.13</spring.version>
-        <spring.boot.test.version>3.1.5</spring.boot.test.version>
-        <jackson.version>2.15.3</jackson.version>
+        <groovy.version>4.0.20</groovy.version>
+        <spock.spring.version>2.4-M4-groovy-4.0</spock.spring.version>
+        <spock.core.version>2.4-M4-groovy-4.0</spock.core.version>
+        <spring.test.version>6.0.18</spring.test.version>
+        <spring.version>6.0.18</spring.version>
+        <spring.boot.version>3.1.10</spring.boot.version>
+        <jackson.version>2.16.2</jackson.version>
         <lombok.version>1.18.30</lombok.version>
         <hsqldb.version>2.7.2</hsqldb.version>
         <gpg.plugin.version>3.1.0</gpg.plugin.version>
@@ -694,7 +694,7 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-test</artifactId>
-                <version>${spring.boot.test.version}</version>
+                <version>${spring.boot.version}</version>
                 <scope>test</scope>
                 <exclusions>
                     <exclusion>
@@ -785,7 +785,7 @@
             <dependency>
                 <groupId>org.junit.vintage</groupId>
                 <artifactId>junit-vintage-engine</artifactId>
-                <version>5.10.0</version>
+                <version>5.10.2</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
@@ -809,7 +809,7 @@
             <dependency>
                 <groupId>net.bytebuddy</groupId>
                 <artifactId>byte-buddy</artifactId>
-                <version>1.14.9</version>
+                <version>1.14.12</version>
                 <scope>test</scope>
             </dependency>
         </dependencies>
