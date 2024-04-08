@@ -15,11 +15,11 @@
         <groovy.version>2.4.21</groovy.version>
         <spock.spring.version>1.1-groovy-2.4</spock.spring.version>
         <spock.core.version>1.1-groovy-2.4</spock.core.version>
-        <spring.test.version>5.3.31</spring.test.version>
-        <spring.instrument.version>5.3.31</spring.instrument.version>
+        <spring.test.version>5.3.33</spring.test.version>
+        <spring.instrument.version>5.3.33</spring.instrument.version>
         <spring.boot.test.version>2.7.18</spring.boot.test.version>
-        <jackson-bom.version>2.15.3</jackson-bom.version>
-        <lombok.version>1.18.28</lombok.version>
+        <jackson-bom.version>2.15.4</jackson-bom.version>
+        <lombok.version>1.18.32</lombok.version>
         <hsqldb.version>2.7.1</hsqldb.version>
         <gpg.plugin.version>1.6</gpg.plugin.version>
     </properties>
