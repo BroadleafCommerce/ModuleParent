@@ -15,9 +15,9 @@
         <groovy.version>4.0.20</groovy.version>
         <spock.spring.version>2.4-M4-groovy-4.0</spock.spring.version>
         <spock.core.version>2.4-M4-groovy-4.0</spock.core.version>
-        <spring.test.version>6.0.18</spring.test.version>
-        <spring.version>6.0.18</spring.version>
-        <spring.boot.version>3.1.10</spring.boot.version>
+        <spring.version>6.0.19</spring.version>
+        <spring.security.version>6.1.9</spring.security.version>
+        <spring.boot.version>3.1.11</spring.boot.version>
         <jackson.version>2.16.2</jackson.version>
         <lombok.version>1.18.30</lombok.version>
         <hsqldb.version>2.7.2</hsqldb.version>
@@ -692,6 +692,18 @@
                 </exclusions>
             </dependency>
             <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-test</artifactId>
+                <version>${spring.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-test</artifactId>
+                <version>${spring.security.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-test</artifactId>
                 <version>${spring.boot.version}</version>
@@ -762,12 +774,6 @@
                         <artifactId>groovy</artifactId>
                     </exclusion>
                 </exclusions>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-test</artifactId>
-                <version>${spring.test.version}</version>
-                <scope>test</scope>
             </dependency>
             <!-- Mock concrete classes -->
             <dependency>
