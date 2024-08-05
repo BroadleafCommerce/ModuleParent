@@ -1,11 +1,23 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
+    <name>Broadleafcommerce Module Parent</name>
+    <description>Contains plugin definitions and versions so that they do not pollute all projects</description>
     <groupId>org.broadleafcommerce</groupId>
     <artifactId>broadleaf-module-parent</artifactId>
-    <version>1.0.10-OAP-J11</version>
+    <version>1.0.10-OAP-JAVA11-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>Plugin Helper</name>
-    <description>Contains plugin definitions and versions so that they do not pollute all projects</description>
+    <url>https://www.broadleafcommerce.com</url>
+
+    <properties>
+        <attachSources>true</attachSources>
+        <groovy.version>4.0.22</groovy.version>
+        <spock.spring.version>2.4-M4-groovy-4.0</spock.spring.version>
+        <spock.core.version>2.4-M4-groovy-4.0</spock.core.version>
+        <spring.test.version>5.3.34</spring.test.version>
+        <spring.instrument.version>5.3.34</spring.instrument.version>
+        <gpg.plugin.version>1.6</gpg.plugin.version>
+    </properties>
 
     <scm>
         <connection>scm:git:git@github.com:BroadleafCommerce/ModuleParent.git</connection>
@@ -13,7 +25,6 @@
         <url>https://github.com/BroadleafCommerce/ModuleParent</url>
         <tag>HEAD</tag>
     </scm>
-    <url>http://www.broadleafcommerce.com</url>
     <repositories>
         <repository>
             <id>releases</id>
@@ -26,15 +37,7 @@
             <url>http://nexus.broadleafcommerce.org/nexus/content/groups/community-snapshots/</url>
         </repository>
     </repositories>
-    <properties>
-        <attachSources>true</attachSources>
-        <groovy.version>4.0.22</groovy.version>
-        <spock.spring.version>2.4-M4-groovy-4.0</spock.spring.version>
-        <spock.core.version>2.4-M4-groovy-4.0</spock.core.version>
-        <spring.test.version>5.3.34</spring.test.version>
-        <spring.instrument.version>5.3.34</spring.instrument.version>
-        <gpg.plugin.version>1.6</gpg.plugin.version>
-    </properties>
+
     <build>
         <pluginManagement>
             <plugins>
