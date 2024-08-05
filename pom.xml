@@ -1,11 +1,23 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
+    <name>Broadleafcommerce Module Parent</name>
+    <description>Contains plugin definitions and versions so that they do not pollute all projects</description>
     <groupId>org.broadleafcommerce</groupId>
     <artifactId>broadleaf-module-parent</artifactId>
     <version>1.0.10-OAP-JAVA11-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>Plugin Helper</name>
-    <description>Contains plugin definitions and versions so that they do not pollute all projects</description>
+    <url>https://www.broadleafcommerce.com</url>
+
+    <properties>
+        <attachSources>true</attachSources>
+        <groovy.version>4.0.22</groovy.version>
+        <spock.spring.version>2.4-M4-groovy-4.0</spock.spring.version>
+        <spock.core.version>2.4-M4-groovy-4.0</spock.core.version>
+        <spring.test.version>5.3.34</spring.test.version>
+        <spring.instrument.version>5.3.34</spring.instrument.version>
+        <gpg.plugin.version>1.6</gpg.plugin.version>
+    </properties>
 
     <scm>
         <connection>scm:git:git@github.com:BroadleafCommerce/ModuleParent.git</connection>
@@ -17,32 +29,25 @@
         <repository>
             <id>releases</id>
             <name>public releases</name>
-            <url>https://nexus2.broadleafcommerce.org/nexus/content/groups/community-releases/</url>
+            <url>http://nexus.broadleafcommerce.org/nexus/content/groups/community-releases/</url>
         </repository>
         <repository>
             <id>snapshots</id>
             <name>public snapshots</name>
-            <url>https://nexus2.broadleafcommerce.org/nexus/content/groups/community-snapshots/</url>
+            <url>http://nexus.broadleafcommerce.org/nexus/content/groups/community-snapshots/</url>
         </repository>
     </repositories>
-    <properties>
-        <attachSources>true</attachSources>
-        <groovy.version>2.3.10</groovy.version>
-        <spock.spring.version>1.0-groovy-2.3</spock.spring.version>
-        <spock.core.version>1.0-groovy-2.3</spock.core.version>
-        <spring.test.version>4.1.9.RELEASE</spring.test.version>
-        <spring.instrument.version>4.1.9.RELEASE</spring.instrument.version>
-    </properties>
+
     <build>
         <pluginManagement>
             <plugins>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.1</version>
+                    <version>3.11.0</version>
                     <configuration>
-                        <source>1.7</source>
-                        <target>1.7</target>
+                        <source>11</source>
+                        <target>11</target>
                     </configuration>
                 </plugin>
                 <plugin>
@@ -88,7 +93,10 @@
                 <plugin>
                     <groupId>org.codehaus.gmavenplus</groupId>
                     <artifactId>gmavenplus-plugin</artifactId>
-                    <version>1.4</version>
+                    <version>3.0.0</version>
+                    <configuration>
+                        <targetBytecode>11</targetBytecode>
+                    </configuration>
                     <executions>
                         <execution>
                             <goals>
@@ -96,8 +104,8 @@
                                 <goal>addTestSources</goal>
                                 <goal>generateStubs</goal>
                                 <goal>compile</goal>
-                                <goal>testGenerateStubs</goal>
-                                <goal>testCompile</goal>
+                                <goal>generateTestStubs</goal>
+                                <goal>compileTests</goal>
                                 <goal>removeStubs</goal>
                                 <goal>removeTestStubs</goal>
                             </goals>
@@ -107,7 +115,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
-                    <version>2.10</version>
+                    <version>3.2.5</version>
                     <configuration>
                         <includes>
                             <include>**/*Spec*</include>
@@ -117,6 +125,7 @@
                             <exclude>**/browsertests/**</exclude>
                             <exclude>**/*IT*</exclude>
                         </excludes>
+                        <reuseForks>false</reuseForks>
                         <argLine>
                             -Xmx512m
                             -javaagent:"${project.build.directory}/agents/spring-instrument.jar"
@@ -127,7 +136,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-failsafe-plugin</artifactId>
-                    <version>2.17</version>
+                    <version>2.22.2</version>
                     <executions>
                         <execution>
                             <goals>
@@ -140,8 +149,9 @@
                         <includes>
                             <include>**/*IT*</include>
                         </includes>
+                        <reuseForks>false</reuseForks>
                         <argLine>
-                            -Xmx512m
+                            -Xmx1g
                             -javaagent:"${project.build.directory}/agents/spring-instrument.jar"
                             ${failsafe.argLine}
                         </argLine>
@@ -151,7 +161,7 @@
                 <plugin>
                     <groupId>org.jacoco</groupId>
                     <artifactId>jacoco-maven-plugin</artifactId>
-                    <version>0.7.4.201502262128</version>
+                    <version>0.8.10</version>
                     <executions>
                         <!-- Unit test coverage prep; generates jacoco.exec -->
                         <execution>
@@ -199,7 +209,7 @@
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>license-maven-plugin</artifactId>
-                    <version>1.8</version>
+                    <version>1.20</version>
                     <configuration>
                         <verbose>false</verbose>
                         <addSvnKeyWords>false</addSvnKeyWords>
@@ -240,25 +250,17 @@
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-gpg-plugin</artifactId>
-                    <version>1.4</version>
-                    <executions>
-                        <execution>
-                            <id>sign-artifacts</id>
-                            <phase>verify</phase>
-                            <goals>
-                                <goal>sign</goal>
-                            </goals>
-                            <configuration>
-                                <keyname>info@broadleafcommerce.org</keyname>
-                            </configuration>
-                        </execution>
-                    </executions>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-javadoc-plugin</artifactId>
                     <version>2.9.1</version>
+                    <executions>
+                        <execution>
+                            <id>attach-javadocs</id>
+                            <goals>
+                                <goal>jar</goal>
+                                <goal>test-jar</goal>
+                            </goals>
+                        </execution>
+                    </executions>
                     <configuration>
                         <aggregate>true</aggregate>
                         <minmemory>128m</minmemory>
@@ -276,7 +278,7 @@
                         <execution>
                             <id>attach-sources</id>
                             <goals>
-                                <goal>jar</goal>
+                                <goal>jar-no-fork</goal>
                                 <goal>test-jar</goal>
                             </goals>
                         </execution>
@@ -288,7 +290,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
-                <version>2.10</version>
+                <version>3.1.2</version>
                 <executions>
                     <execution>
                         <id>copy-agent</id>
@@ -310,6 +312,14 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.gmavenplus</groupId>
+                <artifactId>gmavenplus-plugin</artifactId>
+            </plugin>
         </plugins>
     </build>
     <distributionManagement>
@@ -321,7 +331,7 @@
             <id>releases</id>
             <url>http://nexus.broadleafcommerce.org/nexus/content/repositories/releases/</url>
         </repository>
-    </distributionManagement> 
+    </distributionManagement>
     <profiles>
         <profile>
             <id>only-eclipse</id>
@@ -460,23 +470,37 @@
                             </argLine>
                         </configuration>
                     </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-failsafe-plugin</artifactId>
+                        <configuration>
+                            <argLine>
+                                -Xmx1g -XX:MaxPermSize=512m -Xdebug
+                                -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8084
+                                -agentpath:${jrebel.path}
+                                -javaagent:"${project.build.directory}/agents/spring-instrument.jar"
+                                -noverify
+                                -Drebel.log.stdout=true
+                                ${failsafe.argLine}
+                            </argLine>
+                        </configuration>
+                    </plugin>
                 </plugins>
             </build>
         </profile>
         <profile>
+            <!-- IMPORTANT -->
+            <!-- This relies on a gpg.passphrase property set either at build time or in a settings.xml. If within
+               a <profile><properties> section, that <profile><id> must match _exactly_ to this id for gpg.passphrase to be picked up.
+               You know you have messed up if, on signing, GPG signing fails with this message:
+                   "gpg: signing failed: Inappropriate ioctl for device" -->
             <id>release-sign-artifacts</id>
-            <activation>
-                <property>
-                    <name>performRelease</name>
-                    <value>true</value>
-                </property>
-            </activation>
             <build>
                 <plugins>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
-                        <version>1.4</version>
+                        <version>${gpg.plugin.version}</version>
                         <executions>
                             <execution>
                                 <id>sign-artifacts</id>
@@ -486,6 +510,10 @@
                                 </goals>
                                 <configuration>
                                     <keyname>info@broadleafcommerce.org</keyname>
+                                    <gpgArguments>
+                                        <arg>--pinentry-mode</arg>
+                                        <arg>loopback</arg>
+                                    </gpgArguments>
                                 </configuration>
                             </execution>
                         </executions>
@@ -523,13 +551,7 @@
             </build>
         </profile>
         <profile>
-            <id>build-sources</id>
-            <activation>
-                <property>
-                    <name>attachSources</name>
-                    <value>true</value>
-                </property>
-            </activation>
+            <id>sources</id>
             <build>
                 <plugins>
                     <plugin>
@@ -544,27 +566,58 @@
             <build>
                 <plugins>
                     <plugin>
-                      <groupId>org.owasp</groupId>
-                      <artifactId>dependency-check-maven</artifactId>
-                      <version>1.3.4</version>
-                      <executions>
-                          <execution>
-                              <goals>
-                                  <goal>check</goal>
-                              </goals>
-                          </execution>
-                      </executions>
+                        <groupId>org.owasp</groupId>
+                        <artifactId>dependency-check-maven</artifactId>
+                        <version>8.4.0</version>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>check</goal>
+                                </goals>
+                            </execution>
+                        </executions>
                     </plugin>
-            </plugins>
+                </plugins>
             </build>
         </profile>
     </profiles>
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>org.codehaus.groovy</groupId>
+                <groupId>org.apache.groovy</groupId>
                 <artifactId>groovy-all</artifactId>
                 <version>${groovy.version}</version>
+                <type>pom</type>
+                <exclusions>
+                    <exclusion>
+                        <groupId>com.sun</groupId>
+                        <artifactId>tools</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.apache.ant</groupId>
+                        <artifactId>ant</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.fasterxml.jackson.core</groupId>
+                        <artifactId>jackson-core</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.fasterxml.jackson.core</groupId>
+                        <artifactId>jackson-databind</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.fasterxml.jackson.core</groupId>
+                        <artifactId>jackson-core</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.fasterxml.jackson.core</groupId>
+                        <artifactId>jackson-databind</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.fasterxml.jackson.core</groupId>
+                        <artifactId>jackson-annotations</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>org.spockframework</groupId>
@@ -574,6 +627,10 @@
                     <exclusion>
                         <groupId>org.codehaus.groovy</groupId>
                         <artifactId>groovy-all</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.apache.groovy</groupId>
+                        <artifactId>groovy</artifactId>
                     </exclusion>
                 </exclusions>
             </dependency>
@@ -586,12 +643,33 @@
                         <groupId>org.codehaus.groovy</groupId>
                         <artifactId>groovy-all</artifactId>
                     </exclusion>
+                    <exclusion>
+                        <groupId>org.apache.groovy</groupId>
+                        <artifactId>groovy</artifactId>
+                    </exclusion>
                 </exclusions>
             </dependency>
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-test</artifactId>
                 <version>${spring.test.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.testng</groupId>
+                <artifactId>testng</artifactId>
+                <version>6.1</version>
+                <type>jar</type>
+                <scope>test</scope>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.yaml</groupId>
+                        <artifactId>snakeyaml</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.slf4j</groupId>
+                        <artifactId>slf4j-api</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <!-- Mock concrete classes -->
             <dependency>
@@ -602,7 +680,7 @@
             <dependency>
                 <groupId>javax.servlet</groupId>
                 <artifactId>javax.servlet-api</artifactId>
-                <version>3.0.1</version>
+                <version>4.0.1</version>
             </dependency>
             <dependency>
                 <groupId>junit</groupId>
