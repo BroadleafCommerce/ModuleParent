@@ -93,7 +93,10 @@
                 <plugin>
                     <groupId>org.codehaus.gmavenplus</groupId>
                     <artifactId>gmavenplus-plugin</artifactId>
-                    <version>1.5</version>
+                    <version>3.0.0</version>
+                    <configuration>
+                        <targetBytecode>11</targetBytecode>
+                    </configuration>
                     <executions>
                         <execution>
                             <goals>
@@ -101,8 +104,8 @@
                                 <goal>addTestSources</goal>
                                 <goal>generateStubs</goal>
                                 <goal>compile</goal>
-                                <goal>testGenerateStubs</goal>
-                                <goal>testCompile</goal>
+                                <goal>generateTestStubs</goal>
+                                <goal>compileTests</goal>
                                 <goal>removeStubs</goal>
                                 <goal>removeTestStubs</goal>
                             </goals>
