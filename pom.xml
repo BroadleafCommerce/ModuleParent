@@ -5,7 +5,7 @@
     <description>Contains plugin definitions and versions so that they do not pollute all projects</description>
     <groupId>org.broadleafcommerce</groupId>
     <artifactId>broadleaf-module-parent</artifactId>
-    <version>1.0.11-OAP-JAVA11-M1-SNAPSHOT</version>
+    <version>1.0.11-OAP-JAVA11-SNAPSHOT</version>
     <packaging>pom</packaging>
     <url>https://www.broadleafcommerce.com</url>
 
