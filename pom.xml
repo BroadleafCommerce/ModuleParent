@@ -12,17 +12,19 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <attachSources>true</attachSources>
-        <groovy.version>4.0.20</groovy.version>
-        <spock.spring.version>2.4-M4-groovy-4.0</spock.spring.version>
-        <spock.core.version>2.4-M4-groovy-4.0</spock.core.version>
-        <spring.version>6.0.19</spring.version>
-        <spring.security.version>6.1.9</spring.security.version>
-        <spring.boot.version>3.1.11</spring.boot.version>
-        <jackson.version>2.17.2</jackson.version>
-        <lombok.version>1.18.32</lombok.version>
-        <hsqldb.version>2.7.2</hsqldb.version>
-        <gpg.plugin.version>3.1.0</gpg.plugin.version>
-        <jakarta.version>6.0.0</jakarta.version>
+        <groovy.version>4.0.24</groovy.version>
+        <spock.spring.version>2.4-M5-groovy-4.0</spock.spring.version>
+        <spock.core.version>2.4-M5-groovy-4.0</spock.core.version>
+        <spring.version>6.2.2</spring.version>
+        <spring.security.version>6.4.2</spring.security.version>
+        <spring.boot.version>3.4.2</spring.boot.version>
+        <jackson.version>2.18.2</jackson.version>
+        <lombok.version>1.18.36</lombok.version>
+        <hsqldb.version>2.7.4</hsqldb.version>
+        <gpg.plugin.version>3.2.7</gpg.plugin.version>
+        <jakarta.version>6.1.0</jakarta.version>
+        <junit.version>5.11.3</junit.version>
+        <mockito-core.version>5.15.2</mockito-core.version>
     </properties>
     <scm>
         <connection>scm:git:git@github.com:BroadleafCommerce/ModuleParent.git</connection>
@@ -49,7 +51,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.11.0</version>
+                    <version>3.13.0</version>
                     <configuration>
                         <source>17</source>
                         <target>17</target>
@@ -58,17 +60,17 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-release-plugin</artifactId>
-                    <version>3.0.1</version>
+                    <version>3.1.1</version>
                 </plugin>
                 <plugin>
                     <groupId>org.zeroturnaround</groupId>
                     <artifactId>jrebel-maven-plugin</artifactId>
-                    <version>1.1.11</version>
+                    <version>1.2.1</version>
                 </plugin>
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>build-helper-maven-plugin</artifactId>
-                    <version>3.4.0</version>
+                    <version>3.6.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -78,7 +80,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jar-plugin</artifactId>
-                    <version>3.2.2</version>
+                    <version>3.4.2</version>
                 </plugin>
                 <plugin>
                     <artifactId>maven-clean-plugin</artifactId>
@@ -98,7 +100,7 @@
                 <plugin>
                     <groupId>org.codehaus.gmavenplus</groupId>
                     <artifactId>gmavenplus-plugin</artifactId>
-                    <version>3.0.0</version>
+                    <version>4.1.1</version>
                     <configuration>
                         <targetBytecode>17</targetBytecode>
                     </configuration>
@@ -120,7 +122,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
-                    <version>3.2.1</version>
+                    <version>3.5.2</version>
                     <executions>
                         <execution>
                             <id>default-test</id>
@@ -197,7 +199,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-failsafe-plugin</artifactId>
-                    <version>3.1.2</version>
+                    <version>3.5.2</version>
                     <executions>
                         <execution>
                             <goals>
@@ -219,7 +221,7 @@
                 <plugin>
                     <groupId>org.jacoco</groupId>
                     <artifactId>jacoco-maven-plugin</artifactId>
-                    <version>0.8.10</version>
+                    <version>0.8.12</version>
                     <executions>
                         <!-- Unit test coverage prep; generates jacoco.exec -->
                         <execution>
@@ -267,7 +269,7 @@
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>license-maven-plugin</artifactId>
-                    <version>2.4.0</version>
+                    <version>2.5.0</version>
                     <configuration>
                         <verbose>false</verbose>
                         <addSvnKeyWords>false</addSvnKeyWords>
@@ -312,7 +314,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-javadoc-plugin</artifactId>
-                    <version>3.6.0</version>
+                    <version>3.11.2</version>
                     <executions>
                         <execution>
                             <id>attach-javadocs</id>
@@ -331,7 +333,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-source-plugin</artifactId>
-                    <version>3.0.1</version>
+                    <version>3.3.1</version>
                     <configuration>
                         <attach>${attachSources}</attach>
                     </configuration>
@@ -355,7 +357,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
-                <version>3.1.2</version>
+                <version>3.8.1</version>
                 <executions>
                     <execution>
                         <id>copy-agent</id>
@@ -419,21 +421,15 @@
                                     <pluginExecutions>
                                         <pluginExecution>
                                             <pluginExecutionFilter>
-                                                <groupId>
-                                                    org.apache.maven.plugins
-                                                </groupId>
-                                                <artifactId>
-                                                    maven-dependency-plugin
-                                                </artifactId>
-                                                <versionRange>
-                                                    [2.10,)
-                                                </versionRange>
+                                                <groupId>org.apache.maven.plugins</groupId>
+                                                <artifactId>maven-dependency-plugin</artifactId>
+                                                <versionRange>[2.10,)</versionRange>
                                                 <goals>
                                                     <goal>copy</goal>
                                                 </goals>
                                             </pluginExecutionFilter>
                                             <action>
-                                                <ignore />
+                                                <ignore/>
                                             </action>
                                         </pluginExecution>
                                         <pluginExecution>
@@ -446,7 +442,7 @@
                                                 </goals>
                                             </pluginExecutionFilter>
                                             <action>
-                                                <ignore />
+                                                <ignore/>
                                             </action>
                                         </pluginExecution>
                                         <pluginExecution>
@@ -459,7 +455,7 @@
                                                 </goals>
                                             </pluginExecutionFilter>
                                             <action>
-                                                <ignore />
+                                                <ignore/>
                                             </action>
                                         </pluginExecution>
                                         <pluginExecution>
@@ -479,7 +475,7 @@
                                                 </goals>
                                             </pluginExecutionFilter>
                                             <action>
-                                                <ignore />
+                                                <ignore/>
                                             </action>
                                         </pluginExecution>
                                         <pluginExecution>
@@ -492,7 +488,7 @@
                                                 </goals>
                                             </pluginExecutionFilter>
                                             <action>
-                                                <ignore />
+                                                <ignore/>
                                             </action>
                                         </pluginExecution>
                                     </pluginExecutions>
@@ -631,7 +627,7 @@
                     <plugin>
                       <groupId>org.owasp</groupId>
                       <artifactId>dependency-check-maven</artifactId>
-                      <version>10.0.3</version>
+                      <version>12.0.2</version>
                       <executions>
                           <execution>
                               <goals>
@@ -666,8 +662,20 @@
                 <scope>test</scope>
                 <exclusions>
                     <exclusion>
-                        <groupId>org.yaml</groupId>
-                        <artifactId>snakeyaml</artifactId>
+                        <groupId>com.fasterxml.jackson.core</groupId>
+                        <artifactId>jackson-core</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.apache.groovy</groupId>
+                        <artifactId>groovy-ant</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.fasterxml.jackson.core</groupId>
+                        <artifactId>jackson-databind</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.hamcrest</groupId>
+                        <artifactId>hamcrest-core</artifactId>
                     </exclusion>
                 </exclusions>
             </dependency>
@@ -682,6 +690,36 @@
                 <artifactId>spring-security-test</artifactId>
                 <version>${spring.security.version}</version>
                 <scope>test</scope>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>spring-core</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>spring-web</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>spring-beans</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>spring-context</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>spring-expression</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>spring-aop</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>io.micrometer</groupId>
+                        <artifactId>micrometer-observation</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
@@ -694,24 +732,32 @@
                         <artifactId>jakarta.xml.bind-api</artifactId>
                     </exclusion>
                     <exclusion>
-                        <groupId>org.ow2.asm</groupId>
-                        <artifactId>asm</artifactId>
+                        <groupId>jakarta.annotation</groupId>
+                        <artifactId>jakarta.annotation-api</artifactId>
                     </exclusion>
                     <exclusion>
                         <groupId>org.slf4j</groupId>
                         <artifactId>slf4j-api</artifactId>
                     </exclusion>
                     <exclusion>
-                        <groupId>org.junit.jupiter</groupId>
-                        <artifactId>junit-jupiter-api</artifactId>
+                        <groupId>ch.qos.logback</groupId>
+                        <artifactId>logback-classic</artifactId>
                     </exclusion>
                     <exclusion>
-                        <groupId>org.junit.jupiter</groupId>
-                        <artifactId>junit-jupiter-engine</artifactId>
+                        <groupId>org.objenesis</groupId>
+                        <artifactId>objenesis</artifactId>
                     </exclusion>
                     <exclusion>
-                        <groupId>org.junit.platform</groupId>
-                        <artifactId>junit-platform-engine</artifactId>
+                        <groupId>net.minidev</groupId>
+                        <artifactId>json-smart</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.jayway.jsonpath</groupId>
+                        <artifactId>json-path</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.hamcrest</groupId>
+                        <artifactId>hamcrest</artifactId>
                     </exclusion>
                     <exclusion>
                         <groupId>net.bytebuddy</groupId>
@@ -734,10 +780,6 @@
                         <artifactId>junit-platform-engine</artifactId>
                     </exclusion>
                     <exclusion>
-                        <groupId>org.opentest4j</groupId>
-                        <artifactId>opentest4j</artifactId>
-                    </exclusion>
-                    <exclusion>
                         <groupId>org.apache.groovy</groupId>
                         <artifactId>groovy</artifactId>
                     </exclusion>
@@ -751,11 +793,11 @@
                 <exclusions>
                     <exclusion>
                         <groupId>org.apache.groovy</groupId>
-                        <artifactId>groovy-all</artifactId>
+                        <artifactId>groovy</artifactId>
                     </exclusion>
                     <exclusion>
-                        <groupId>org.apache.groovy</groupId>
-                        <artifactId>groovy</artifactId>
+                        <groupId>org.junit.platform</groupId>
+                        <artifactId>junit-platform-engine</artifactId>
                     </exclusion>
                 </exclusions>
             </dependency>
@@ -763,25 +805,31 @@
             <dependency>
                 <groupId>cglib</groupId>
                 <artifactId>cglib-nodep</artifactId>
-                <version>3.1</version>
+                <version>3.3.0</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
-                <groupId>junit</groupId>
-                <artifactId>junit</artifactId>
-                <version>4.13.2</version>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-api</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-engine</artifactId>
+                <version>${junit.version}</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>org.junit.vintage</groupId>
                 <artifactId>junit-vintage-engine</artifactId>
-                <version>5.10.2</version>
+                <version>${junit.version}</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>org.testng</groupId>
                 <artifactId>testng</artifactId>
-                <version>7.8.0</version>
+                <version>7.10.2</version>
                 <scope>test</scope>
                 <exclusions>
                     <exclusion>
