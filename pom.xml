@@ -15,9 +15,10 @@
         <groovy.version>4.0.20</groovy.version>
         <spock.spring.version>2.4-M4-groovy-4.0</spock.spring.version>
         <spock.core.version>2.4-M4-groovy-4.0</spock.core.version>
-        <spring.version>6.0.23</spring.version>
-        <spring.security.version>6.1.9</spring.security.version>
-        <spring.boot.version>3.1.12</spring.boot.version>
+        <spring.version>6.2.11</spring.version>
+        <spring.security.version>6.5.3</spring.security.version>
+        <spring.boot.version>3.5.5</spring.boot.version>
+        <spring-ldap-core.version>3.3.3</spring-ldap-core.version>
         <jackson.version>2.19.0</jackson.version>
         <lombok.version>1.18.38</lombok.version>
         <hsqldb.version>2.7.2</hsqldb.version>
@@ -54,6 +55,7 @@
                         <source>17</source>
                         <target>17</target>
 						<release>17</release>
+                        <parameters>true</parameters>
                     </configuration>
                 </plugin>
                 <plugin>
