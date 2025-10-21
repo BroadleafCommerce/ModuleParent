@@ -19,8 +19,8 @@
         <spring.security.version>6.5.5</spring.security.version>
         <spring.boot.version>3.5.6</spring.boot.version>
         <spring-ldap-core.version>3.3.3</spring-ldap-core.version>
-        <jackson.version>2.19.0</jackson.version>
-        <lombok.version>1.18.38</lombok.version>
+        <jackson.version>2.20.0</jackson.version>
+        <lombok.version>1.18.42</lombok.version>
         <hsqldb.version>2.7.2</hsqldb.version>
         <gpg.plugin.version>3.1.0</gpg.plugin.version>
         <jakarta.version>6.0.0</jakarta.version>
@@ -101,7 +101,7 @@
                 <plugin>
                     <groupId>org.codehaus.gmavenplus</groupId>
                     <artifactId>gmavenplus-plugin</artifactId>
-                    <version>4.1.1</version>
+                    <version>4.2.0</version>
                     <configuration>
                         <targetBytecode>17</targetBytecode>
                     </configuration>
@@ -315,7 +315,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-javadoc-plugin</artifactId>
-                    <version>3.6.0</version>
+                    <version>3.12.0</version>
                     <executions>
                         <execution>
                             <id>attach-javadocs</id>
@@ -334,7 +334,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-source-plugin</artifactId>
-                    <version>3.0.1</version>
+                    <version>3.3.1</version>
                     <configuration>
                         <attach>${attachSources}</attach>
                     </configuration>
@@ -358,7 +358,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
-                <version>3.1.2</version>
+                <version>3.9.0</version>
                 <executions>
                     <execution>
                         <id>copy-agent</id>
@@ -634,7 +634,7 @@
                     <plugin>
                       <groupId>org.owasp</groupId>
                       <artifactId>dependency-check-maven</artifactId>
-                      <version>10.0.3</version>
+                      <version>12.1.6</version>
                       <executions>
                           <execution>
                               <goals>
