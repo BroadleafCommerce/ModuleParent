@@ -12,17 +12,17 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <attachSources>true</attachSources>
+		<gpg.plugin.version>1.6</gpg.plugin.version>
+		<hsqldb.version>2.7.4</hsqldb.version>
         <groovy.version>2.4.21</groovy.version>
+		<spring.test.version>5.3.39</spring.test.version>
+		<spring.instrument.version>5.3.39</spring.instrument.version>
+		<spring.boot.test.version>2.7.18</spring.boot.test.version>
         <spock.spring.version>1.1-groovy-2.4</spock.spring.version>
-        <spock.core.version>1.1-groovy-2.4</spock.core.version>
-        <spring.test.version>5.3.39</spring.test.version>
-        <spring.instrument.version>5.3.39</spring.instrument.version>
-        <spring.boot.test.version>2.7.18</spring.boot.test.version>
-        <jackson-bom.version>2.18.5</jackson-bom.version>
+        <spock.core.version>1.1-groovy-2.4</spock.core.version>        
+        <logback.version>1.2.13</logback.version>        
         <lombok.version>1.18.40</lombok.version>
-        <logback.version>1.2.13</logback.version>
-        <hsqldb.version>2.7.4</hsqldb.version>
-        <gpg.plugin.version>1.6</gpg.plugin.version>
+        <jackson-bom.version>2.18.5</jackson-bom.version>
     </properties>
     <scm>
         <connection>scm:git:git@github.com:BroadleafCommerce/ModuleParent.git</connection>
@@ -277,7 +277,7 @@
                         <licenseName>blc_confidential</licenseName>
                         <licenseResolver>${project.baseUri}/licenses</licenseResolver>
                         <!--Updates the end-dates every year. Build normally and verify dates are changes then commit-->
-                        <canUpdateCopyright>true</canUpdateCopyright>
+                        <canUpdateCopyright>false</canUpdateCopyright>
                         <excludes>
                             <exclude>**/*.sql</exclude>
                             <exclude>**/*.html</exclude>
