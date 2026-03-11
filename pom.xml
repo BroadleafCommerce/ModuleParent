@@ -12,19 +12,19 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <attachSources>true</attachSources>
-        <groovy.version>4.0.24</groovy.version>
-        <spock.spring.version>2.4-M5-groovy-4.0</spock.spring.version>
-        <spock.core.version>2.4-M5-groovy-4.0</spock.core.version>
-        <spring.version>6.2.2</spring.version>
-        <spring.security.version>6.4.2</spring.security.version>
-        <spring.boot.version>3.4.2</spring.boot.version>
-        <jackson.version>2.18.2</jackson.version>
+        <groovy.version>5.0.4</groovy.version>
+        <spock.spring.version>2.4-groovy-5.0</spock.spring.version>
+        <spock.core.version>2.4-groovy-5.0</spock.core.version>
+        <spring.version>7.0.2</spring.version>
+        <spring.security.version>7.0.2</spring.security.version>
+        <spring.boot.version>4.0.1</spring.boot.version>
+        <jackson.version>2.20.0</jackson.version>
         <lombok.version>1.18.36</lombok.version>
         <hsqldb.version>2.7.4</hsqldb.version>
         <gpg.plugin.version>3.2.7</gpg.plugin.version>
         <jakarta.version>6.1.0</jakarta.version>
-        <junit.version>5.11.3</junit.version>
-        <mockito-core.version>5.15.2</mockito-core.version>
+        <junit.version>6.0.1</junit.version>
+        <mockito-core.version>5.20.0</mockito-core.version>
     </properties>
     <scm>
         <connection>scm:git:git@github.com:BroadleafCommerce/ModuleParent.git</connection>
@@ -824,6 +824,12 @@
             <dependency>
                 <groupId>org.junit.vintage</groupId>
                 <artifactId>junit-vintage-engine</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.junit.platform</groupId>
+                <artifactId>junit-platform-launcher</artifactId>
                 <version>${junit.version}</version>
                 <scope>test</scope>
             </dependency>
