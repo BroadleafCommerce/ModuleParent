@@ -12,14 +12,16 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <attachSources>true</attachSources>
-        <groovy.version>2.4.15</groovy.version>
+        <groovy.version>2.4.21</groovy.version>
         <spock.spring.version>1.1-groovy-2.4</spock.spring.version>
         <spock.core.version>1.1-groovy-2.4</spock.core.version>
-        <spring.test.version>5.2.22.RELEASE</spring.test.version>
-        <spring.instrument.version>5.2.22.RELEASE</spring.instrument.version>
+        <spring.test.version>5.2.25.RELEASE</spring.test.version>
+        <spring.instrument.version>5.2.25.RELEASE</spring.instrument.version>
         <spring.boot.test.version>2.3.12.RELEASE</spring.boot.test.version>
-        <jackson.version>2.13.3</jackson.version>
-        <lombok.version>1.18.24</lombok.version>
+        <jackson.version>2.18.11</jackson.version>
+        <jackson-bom.version>2.18.11</jackson-bom.version>
+        <logback.version>1.2.13</logback.version>
+        <lombok.version>1.18.40</lombok.version>
         <hsqldb.version>2.4.1</hsqldb.version>
         <gpg.plugin.version>1.6</gpg.plugin.version>
     </properties>
@@ -684,7 +686,7 @@
             <dependency>
                 <groupId>javax.servlet</groupId>
                 <artifactId>javax.servlet-api</artifactId>
-                <version>3.1.0</version>
+                <version>4.0.1</version>
                 <scope>provided</scope>
             </dependency>
             <dependency>
@@ -745,7 +747,7 @@
             <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
-                <version>4.13.1</version>
+                <version>4.13.2</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
