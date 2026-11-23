@@ -22,7 +22,7 @@
         <spock.core.version>1.1-groovy-2.4</spock.core.version>        
         <logback.version>1.2.13</logback.version>        
         <lombok.version>1.18.40</lombok.version>
-        <jackson-bom.version>2.18.5</jackson-bom.version>
+        <jackson-bom.version>2.18.11</jackson-bom.version>
     </properties>
     <scm>
         <connection>scm:git:git@github.com:BroadleafCommerce/ModuleParent.git</connection>
@@ -649,18 +649,21 @@
             <build>
                 <plugins>
                     <plugin>
-                      <groupId>org.owasp</groupId>
-                      <artifactId>dependency-check-maven</artifactId>
-                      <version>10.0.3</version>
-                      <executions>
-                          <execution>
-                              <goals>
-                                  <goal>check</goal>
-                              </goals>
-                          </execution>
-                      </executions>
+                        <groupId>org.owasp</groupId>
+                        <artifactId>dependency-check-maven</artifactId>
+                        <version>12.1.9</version>
+                        <configuration>
+                            <ossindexAnalyzerEnabled>false</ossindexAnalyzerEnabled>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>check</goal>
+                                </goals>
+                            </execution>
+                        </executions>
                     </plugin>
-            </plugins>
+                </plugins>
             </build>
         </profile>
     </profiles>
@@ -730,7 +733,7 @@
             <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
-                <version>4.13.1</version>
+                <version>4.13.2</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
